@@ -9,5 +9,5 @@ class Conferences extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'start_date', 'end_date'];
+    protected $fillable = ['name', 'description', 'location' ,'start_date', 'end_date'];
 }
