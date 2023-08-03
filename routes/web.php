@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConferencesController;
 
@@ -22,3 +23,6 @@ Route::get('/{id}/edit', [ConferencesController::class, 'edit'])->name('edit');
 Route::get('/{id}/display', [ConferencesController::class, 'display'])->name('display');
 Route::put('/{id}', [ConferencesController::class, 'update'])->name('update');
 
+Route::get('/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
+Route::post('/login', 'App\Http\Controllers\UserController@login');
+Route::post('/logout', 'App\Http\Controllers\UserController@logout')->name('logout');
